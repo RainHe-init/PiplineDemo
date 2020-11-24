@@ -1,0 +1,20 @@
+on: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      golang: latest
+  pre_build:
+    commands:
+      - pwd
+  build:
+    commands:
+      - echo Build started on `date`
+      - cd ./code
+      - CGO_ENABLED="0" GOOS="linux" go build -ldflags="-s -w" main.go
+  post_build:
+    commands:
+      - echo Build---ok
+artifacts:
+  files:
+    - ./code/main
