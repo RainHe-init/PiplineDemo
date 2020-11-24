@@ -1,4 +1,4 @@
-on: 0.2
+version: 0.2
 
 phases:
   install:
@@ -17,4 +17,4 @@ phases:
       - echo Build---ok
 artifacts:
   files:
-    - ./code/main
+    - code/main
